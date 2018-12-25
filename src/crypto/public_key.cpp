@@ -71,13 +71,16 @@ namespace fc { namespace crypto {
    public_key::operator std::string() const
    {
       auto data_str = _storage.visit(base58str_visitor<storage_type, config::public_key_prefix, 0>());
-
+#ifdef USE_LEGACY_KEY_STR
       auto which = _storage.which();
       if (which == 0) {
          return std::string(config::public_key_legacy_prefix) + data_str;
       } else {
          return std::string(config::public_key_base_prefix) + "_" + data_str;
       }
+#else
+      return std::string(config::public_key_base_prefix) + "_" + data_str;
+#endif
    }
 
    std::ostream& operator<<(std::ostream& s, const public_key& k) {

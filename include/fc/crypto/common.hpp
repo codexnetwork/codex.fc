@@ -89,8 +89,11 @@ namespace fc { namespace crypto {
       std::string operator()( const KeyType& key ) const {
          using data_type = typename KeyType::data_type;
          constexpr int position = Storage::template position<KeyType>();
+#ifdef USE_LEGACY_KEY_STR
          constexpr bool is_default = position == DefaultPosition;
-
+#else
+         constexpr bool is_default = false;
+#endif
          checksummed_data<data_type> wrapper;
          wrapper.data = key.serialize();
          wrapper.check = checksummed_data<data_type>::calculate_checksum(wrapper.data, !is_default ? Prefixes[position] : nullptr);
