@@ -5,6 +5,7 @@
 #include <fc/io/raw.hpp>
 #include <fc/utility.hpp>
 #include <fc/static_variant.hpp>
+#include <fc/fc_defines.hpp>
 
 namespace fc { namespace crypto {
    template<typename DataType>

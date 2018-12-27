@@ -5,6 +5,7 @@
 #include <fc/reflect/reflect.hpp>
 #include <fc/reflect/variant.hpp>
 #include <fc/static_variant.hpp>
+#include <fc/fc_defines.hpp>
 
 namespace fc { namespace crypto {
 
