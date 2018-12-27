@@ -5,16 +5,9 @@
 #include <fc/reflect/reflect.hpp>
 #include <fc/reflect/variant.hpp>
 #include <fc/static_variant.hpp>
+#include <fc/fc_defines.hpp>
 
 namespace fc { namespace crypto {
-   namespace config {
-      constexpr const char* public_key_legacy_prefix = "EOS";
-      constexpr const char* public_key_base_prefix = "PUB";
-      constexpr const char* public_key_prefix[] = {
-         "K1",
-         "R1"
-      };
-   };
 
    class public_key
    {
