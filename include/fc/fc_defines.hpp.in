@@ -14,7 +14,8 @@ namespace fc {
          constexpr const char* public_key_base_prefix = "${PUB_KEY_BASE_PREFIX}";
          constexpr const char* public_key_prefix[] = {
                "K1",
-               "R1"
+               "R1",
+               "WA"
          };
       };
    };
